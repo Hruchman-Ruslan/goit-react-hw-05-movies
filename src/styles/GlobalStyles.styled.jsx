@@ -23,7 +23,9 @@ export const GlobalStyles = css`
 
     margin: 0;
     background-color: black;
+    color: #00ffff;
     font-size: 32px;
+    font-weight: 700;
 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
       'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
