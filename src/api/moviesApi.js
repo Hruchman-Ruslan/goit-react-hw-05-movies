@@ -6,14 +6,34 @@ export const getTrendingMovies = async () => {
   const { data } = await axios.get(
     `${BASE_URL}trending/all/day?api_key=${API_KEY}`
   );
-  return data;
+
+  return data.results.map(({ id, title }) => {
+    return {
+      id,
+      title,
+    };
+  });
 };
 
-export const getSearchMovies = async () => {
+//   const data = results.map(({ id, title }) => {
+//     return {
+//       id,
+//       title,
+//     };
+//   });
+// };
+
+export const getSearchMovies = async query => {
   const { data } = await axios.get(
-    `${BASE_URL}search/movie?api_key=${API_KEY}`
+    `${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}`
   );
-  return data;
+  console.log(data);
+  return data.results.map(({ id, title }) => {
+    return {
+      id,
+      title,
+    };
+  });
 };
 
 export const getMovieDetails = async () => {
