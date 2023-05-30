@@ -23,7 +23,6 @@ const Movies = () => {
       try {
         const data = await getSearchMovies(query);
         setMovies(data);
-        console.log(data);
       } catch (error) {
         setError('Sorry something went wrong');
       } finally {

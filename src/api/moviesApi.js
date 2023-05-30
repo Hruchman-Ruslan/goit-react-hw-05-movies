@@ -15,19 +15,10 @@ export const getTrendingMovies = async () => {
   });
 };
 
-//   const data = results.map(({ id, title }) => {
-//     return {
-//       id,
-//       title,
-//     };
-//   });
-// };
-
 export const getSearchMovies = async query => {
   const { data } = await axios.get(
     `${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}`
   );
-  console.log(data);
   return data.results.map(({ id, title }) => {
     return {
       id,
@@ -36,23 +27,35 @@ export const getSearchMovies = async query => {
   });
 };
 
-export const getMovieDetails = async () => {
-  const { data } = await axios.get(
-    `${BASE_URL}movie/movie_id?api_key=${API_KEY}`
-  );
+export const getMovieDetails = async id => {
+  const { data } = await axios.get(`${BASE_URL}movie/${id}?api_key=${API_KEY}`);
+
   return data;
 };
 
-export const getMovieCredits = async () => {
+export const getMovieCredits = async id => {
   const { data } = await axios.get(
-    `${BASE_URL}movie/movie_id/credits?api_key=${API_KEY}`
+    `${BASE_URL}movie/${id}/credits?api_key=${API_KEY}`
   );
-  return data;
+  return data.cast.map(({ id, character, original_name, profile_path }) => {
+    return {
+      id,
+      character,
+      original_name,
+      profile_path,
+    };
+  });
 };
 
-export const getMovieReviews = async () => {
+export const getMovieReviews = async id => {
   const { data } = await axios.get(
-    `${BASE_URL}movie/movie_id/reviews?page=1&api_key=${API_KEY}`
+    `${BASE_URL}movie/${id}/reviews?api_key=${API_KEY}`
   );
-  return data;
+  return data.results.map(({ id, content, author }) => {
+    return {
+      id,
+      content,
+      author,
+    };
+  });
 };
