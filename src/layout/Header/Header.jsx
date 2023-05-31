@@ -1,20 +1,24 @@
-import { Link } from 'react-router-dom';
-
-import { HeaderWrapp, List } from './Header.styled';
+import {
+  HeaderWrapp,
+  List,
+  Navigation,
+  Item,
+  StyledLink,
+} from './Header.styled';
 
 export const Header = () => {
   return (
     <HeaderWrapp>
-      <nav>
+      <Navigation>
         <List>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/movies">Movies</Link>
-          </li>
+          <Item>
+            <StyledLink to="/">Home</StyledLink>
+          </Item>
+          <Item>
+            <StyledLink to="/movies">Movies</StyledLink>
+          </Item>
         </List>
-      </nav>
+      </Navigation>
     </HeaderWrapp>
   );
 };

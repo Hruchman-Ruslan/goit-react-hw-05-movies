@@ -23,8 +23,8 @@ export const GlobalStyles = css`
 
     margin: 0;
     background-color: black;
-    color: #00ffff;
-    font-size: 32px;
+    color: #731291;
+    font-size: 28px;
     font-weight: 700;
 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',

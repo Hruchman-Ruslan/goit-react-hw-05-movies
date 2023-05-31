@@ -1,12 +1,14 @@
+import { Item, List, ReviewText, ReviewTitle } from './ReviewsInfo.styled';
+
 export const ReviewsInfo = ({ reviews }) => {
   return (
-    <ul>
+    <List>
       {reviews.map(({ id, content, author }) => (
-        <li key={id}>
-          <h2>Author: {author}</h2>
-          <p>{content}</p>
-        </li>
+        <Item key={id}>
+          <ReviewTitle>Author: {author}</ReviewTitle>
+          <ReviewText>{content}</ReviewText>
+        </Item>
       ))}
-    </ul>
+    </List>
   );
 };

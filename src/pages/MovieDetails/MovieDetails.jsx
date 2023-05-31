@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieDetails } from 'api/moviesApi';
 
 import { GoBack, Loader, MovieInfo, Section } from 'components';
+import { Item, List, StyledLink } from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -30,14 +31,14 @@ const MovieDetails = () => {
     <Section>
       <GoBack path={goBack.current} />
       {movie && <MovieInfo {...movie} />}
-      <ul>
-        <li>
-          <Link to="cast">Cats</Link>
-        </li>
-        <li>
-          <Link to={'reviews'}>Reviews</Link>
-        </li>
-      </ul>
+      <List>
+        <Item>
+          <StyledLink to="cast">Cats</StyledLink>
+        </Item>
+        <Item>
+          <StyledLink to={'reviews'}>Reviews</StyledLink>
+        </Item>
+      </List>
       {isLoading && <Loader />}
       <Outlet />
     </Section>

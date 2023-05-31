@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { Button, Form, Input, Label } from './SearchForm.styled';
+
 export const SearchForm = () => {
   const [, setSearchParams] = useSearchParams();
 
@@ -18,17 +20,18 @@ export const SearchForm = () => {
     setSearchParams({ query });
   };
 
-  const notify = () => toast('Wow so easy!');
+  const notify = () => toast.success('Success 👌');
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="search">
-        <input type="text" name="search" />
-      </label>
-      <button type="submit" onClick={notify}>
+    <Form onSubmit={handleSubmit}>
+      <Button type="submit" onClick={notify}>
         Search
-      </button>
+      </Button>
+      <Label htmlFor="search">
+        <Input type="text" name="search" />
+      </Label>
+
       <ToastContainer />
-    </form>
+    </Form>
   );
 };

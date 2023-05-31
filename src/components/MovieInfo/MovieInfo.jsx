@@ -1,5 +1,14 @@
-import { Section } from 'components';
-import gifDefault from '../../Gif/40Oj.gif';
+import {
+  Genres,
+  GenresText,
+  Img,
+  Overview,
+  OverviewText,
+  Score,
+  Section,
+  TitleInfo,
+} from 'components';
+import gifDefault from '../../gif/40Oj.gif';
 
 export const MovieInfo = ({
   poster_path,
@@ -13,21 +22,21 @@ export const MovieInfo = ({
   return (
     <Section>
       {poster_path ? (
-        <img
+        <Img
           src={`https://image.tmdb.org/t/p/w200${poster_path}`}
           alt={title}
         />
       ) : (
-        <img src={gifDefault} alt={title} width={180} />
+        <Img src={gifDefault} alt={title} width={180} />
       )}
-      <h2>
+      <TitleInfo>
         {original_title} {release_date}
-      </h2>
-      <p>User Score {(vote_average * 10).toFixed()}%</p>
-      <h3>Overview</h3>
-      <p>{overview}</p>
-      <h4>Genres</h4>
-      <p>{genres.map(genre => genre.name).join(' ')}</p>
+      </TitleInfo>
+      <Score>User Score {(vote_average * 10).toFixed()}%</Score>
+      <Overview>Overview</Overview>
+      <OverviewText>{overview}</OverviewText>
+      <Genres>Genres</Genres>
+      <GenresText>{genres.map(genre => genre.name).join(' ')}</GenresText>
     </Section>
   );
 };

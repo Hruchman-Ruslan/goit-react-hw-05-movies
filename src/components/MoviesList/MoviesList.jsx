@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Item, List, StyledLink } from './MoviesList.styled';
 
 export const MoviesList = ({ movies }) => {
   return (
-    <ul>
+    <List>
       {movies.map(({ id, title }) => (
-        <li key={id}>
-          <Link to={`/movies/${id}`}>{title}</Link>
-        </li>
+        <Item key={id}>
+          <StyledLink to={`/movies/${id}`}>{title}</StyledLink>
+        </Item>
       ))}
-    </ul>
+    </List>
   );
 };
