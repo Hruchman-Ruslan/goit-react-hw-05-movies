@@ -1,5 +1,5 @@
 import React from 'react';
-import gifDefault from '../../gif/40Oj.gif';
+import gifDefault from '../../Gif/40Oj.gif';
 import { CastTitle, CastText, Img, Item, List } from './CastInfo.styled';
 
 export const CastInfo = ({ cast }) => {
