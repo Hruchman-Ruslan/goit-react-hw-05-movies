@@ -8,7 +8,7 @@ import {
   Section,
   TitleInfo,
 } from 'components';
-import gifDefault from '../../gif/40Oj.gif';
+import gifDefault from '../../Gif/40Oj.gif';
 
 export const MovieInfo = ({
   poster_path,
