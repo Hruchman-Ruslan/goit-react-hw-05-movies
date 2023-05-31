@@ -35,7 +35,7 @@ const MovieDetails = () => {
           <Link to="cast">Cats</Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link to={'reviews'}>Reviews</Link>
         </li>
       </ul>
       {isLoading && <Loader />}

@@ -1,5 +1,8 @@
 import { useSearchParams } from 'react-router-dom';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const SearchForm = () => {
   const [, setSearchParams] = useSearchParams();
 
@@ -15,12 +18,17 @@ export const SearchForm = () => {
     setSearchParams({ query });
   };
 
+  const notify = () => toast('Wow so easy!');
+
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="search">
         <input type="text" name="search" />
       </label>
-      <button type="submit">Search</button>
+      <button type="submit" onClick={notify}>
+        Search
+      </button>
+      <ToastContainer />
     </form>
   );
 };

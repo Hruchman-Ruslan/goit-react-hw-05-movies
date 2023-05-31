@@ -1,4 +1,5 @@
 import { Section } from 'components';
+import gifDefault from '../../Gif/40Oj.gif';
 
 export const MovieInfo = ({
   poster_path,
@@ -11,7 +12,14 @@ export const MovieInfo = ({
 }) => {
   return (
     <Section>
-      <img src={`https://image.tmdb.org/t/p/w200${poster_path}`} alt={title} />
+      {poster_path ? (
+        <img
+          src={`https://image.tmdb.org/t/p/w200${poster_path}`}
+          alt={title}
+        />
+      ) : (
+        <img src={gifDefault} alt={title} width={180} />
+      )}
       <h2>
         {original_title} {release_date}
       </h2>
