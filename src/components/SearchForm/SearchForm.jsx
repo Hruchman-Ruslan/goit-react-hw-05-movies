@@ -1,4 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -34,4 +35,8 @@ export const SearchForm = () => {
       <ToastContainer />
     </Form>
   );
+};
+
+SearchForm.propTypes = {
+  onSubmit: PropTypes.func,
 };

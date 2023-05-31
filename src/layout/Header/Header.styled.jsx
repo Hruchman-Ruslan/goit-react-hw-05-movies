@@ -48,7 +48,7 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  :first-child {
+  :first-of-type {
     color: #d8a63b;
 
     transition-property: color, transform;

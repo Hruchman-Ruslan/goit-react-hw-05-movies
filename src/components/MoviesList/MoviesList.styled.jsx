@@ -8,11 +8,11 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  :nth-child(2n + 1) {
+  :nth-of-type(2n + 1) {
     color: #10c7af;
   }
 
-  :nth-child(2n) {
+  :nth-of-type(2n) {
     color: #b44f0b;
   }
 
