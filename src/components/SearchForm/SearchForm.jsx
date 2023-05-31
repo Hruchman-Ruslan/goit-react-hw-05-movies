@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 
-const SearchForm = () => {
+export const SearchForm = () => {
   const [, setSearchParams] = useSearchParams();
 
   const handleSubmit = e => {
@@ -24,5 +24,3 @@ const SearchForm = () => {
     </form>
   );
 };
-
-export default SearchForm;

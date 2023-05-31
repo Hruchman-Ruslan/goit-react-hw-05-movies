@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-
-import { Section } from 'components';
 import { getTrendingMovies } from 'api/moviesApi';
-import MoviesList from 'components/MoviesList/MoviesList';
-import { Loader } from 'components/Loader/Loader';
+
+import { Loader, MoviesList, Section } from 'components';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -16,7 +14,6 @@ const Home = () => {
       try {
         const data = await getTrendingMovies();
         setMovies(data);
-        // console.log(data);
       } catch (error) {
         setError('Sorry something went wrong');
       } finally {

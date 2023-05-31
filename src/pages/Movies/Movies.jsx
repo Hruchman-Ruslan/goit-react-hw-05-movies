@@ -1,10 +1,8 @@
-import { getSearchMovies } from 'api/moviesApi';
-import { Section } from 'components';
-import { Loader } from 'components/Loader/Loader';
-import MoviesList from 'components/MoviesList/MoviesList';
-import SearchForm from 'components/SearchForm/SearchForm';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { getSearchMovies } from 'api/moviesApi';
+
+import { Loader, MoviesList, SearchForm, Section } from 'components';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);

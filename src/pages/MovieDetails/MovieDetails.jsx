@@ -1,10 +1,8 @@
-import { getMovieDetails } from 'api/moviesApi';
-import { Section } from 'components';
-import GoBack from 'components/GoBack/GoBack';
-import { Loader } from 'components/Loader/Loader';
-import MovieInfo from 'components/MovieInfo/MovieInfo';
 import { useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import { getMovieDetails } from 'api/moviesApi';
+
+import { GoBack, Loader, MovieInfo, Section } from 'components';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -20,7 +18,6 @@ const MovieDetails = () => {
       try {
         const data = await getMovieDetails(movieId);
         setMovie(data);
-        // console.log(data);
       } catch (error) {
         setError('Sorry something went wrong');
       } finally {
@@ -33,8 +30,14 @@ const MovieDetails = () => {
     <Section>
       <GoBack path={goBack.current} />
       {movie && <MovieInfo {...movie} />}
-      <Link to="cast">Cats</Link>
-      <Link to="reviews">Reviews</Link>
+      <ul>
+        <li>
+          <Link to="cast">Cats</Link>
+        </li>
+        <li>
+          <Link to="reviews">Reviews</Link>
+        </li>
+      </ul>
       {isLoading && <Loader />}
       <Outlet />
     </Section>

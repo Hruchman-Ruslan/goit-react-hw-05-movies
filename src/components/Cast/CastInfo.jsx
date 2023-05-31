@@ -1,7 +1,7 @@
-const CastInfo = ({ movie }) => {
+export const CastInfo = ({ cast }) => {
   return (
     <ul>
-      {movie.map(({ id, character, original_name, profile_path }) => (
+      {cast.map(({ id, character, original_name, profile_path }) => (
         <li key={id}>
           <img
             src={`https://image.tmdb.org/t/p/w200${profile_path}`}
@@ -14,5 +14,3 @@ const CastInfo = ({ movie }) => {
     </ul>
   );
 };
-
-export default CastInfo;

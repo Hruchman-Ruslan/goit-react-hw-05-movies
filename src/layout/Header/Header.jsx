@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
+
 import { HeaderWrapp, List } from './Header.styled';
 
-const Header = () => {
+export const Header = () => {
   return (
     <HeaderWrapp>
       <nav>
@@ -17,5 +18,3 @@ const Header = () => {
     </HeaderWrapp>
   );
 };
-
-export default Header;

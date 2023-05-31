@@ -1,6 +1,6 @@
 import { Section } from 'components';
 
-const MovieInfo = ({
+export const MovieInfo = ({
   poster_path,
   release_date,
   original_title,
@@ -23,5 +23,3 @@ const MovieInfo = ({
     </Section>
   );
 };
-
-export default MovieInfo;

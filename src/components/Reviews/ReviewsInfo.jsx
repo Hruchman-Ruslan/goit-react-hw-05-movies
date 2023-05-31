@@ -1,4 +1,4 @@
-const ReviewsInfo = ({ reviews }) => {
+export const ReviewsInfo = ({ reviews }) => {
   return (
     <ul>
       {reviews.map(({ id, content, author }) => (
@@ -10,5 +10,3 @@ const ReviewsInfo = ({ reviews }) => {
     </ul>
   );
 };
-
-export default ReviewsInfo;

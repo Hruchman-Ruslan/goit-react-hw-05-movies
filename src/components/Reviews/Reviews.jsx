@@ -1,9 +1,8 @@
-import { getMovieReviews } from 'api/moviesApi';
-import { Section } from 'components';
-import { Loader } from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ReviewsInfo from './ReviewsInfo';
+import { getMovieReviews } from 'api/moviesApi';
+
+import { Loader, ReviewsInfo, Section } from 'components';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);

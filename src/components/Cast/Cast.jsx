@@ -1,12 +1,11 @@
-import { getMovieCredits } from 'api/moviesApi';
-import { Section } from 'components';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import CastInfo from './CastInfo';
-import { Loader } from 'components/Loader/Loader';
+import { getMovieCredits } from 'api/moviesApi';
+
+import { CastInfo, Loader, Section } from 'components';
 
 const Cast = () => {
-  const [movie, setMovie] = useState([]);
+  const [cast, setCast] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [, setError] = useState(null);
   const { movieId } = useParams();
@@ -16,7 +15,7 @@ const Cast = () => {
       setIsLoading(true);
       try {
         const data = await getMovieCredits(movieId);
-        setMovie(data);
+        setCast(data);
       } catch (error) {
         setError('Sorry something went wrong');
       } finally {
@@ -27,7 +26,7 @@ const Cast = () => {
 
   return (
     <Section>
-      <CastInfo movie={movie} />
+      <CastInfo cast={cast} />
       {isLoading && <Loader />}
     </Section>
   );
